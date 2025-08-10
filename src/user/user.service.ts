@@ -85,10 +85,6 @@ export class UserService {
                 id
             }
         });
-
-
-
-
     }
 
     async deleteUser(id: number, req: Request) {
