@@ -44,7 +44,7 @@ export class UserRequest {
     @IsOptional()
     password: string;
 
-    @IsString({ message: "Пароль должен быть строкой" })
+    @IsString({ message: "Роль должна быть строкой" })
     @IsEnum(Roles, { message: "Роль должна быть одной из: Admin, User, Manager" })
     @IsOptional()
     role: Roles;

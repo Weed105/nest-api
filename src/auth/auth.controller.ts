@@ -9,7 +9,6 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
-  
 
   @ApiOperation({
     summary:"Регистрация",
@@ -19,6 +18,7 @@ export class AuthController {
   async register(@Res({passthrough:true}) res : Response, @Body() dto : RegisterRequest){
     return await this.authService.register(res, dto);
   }
+
   @ApiOperation({
     summary:"Авторизация",
     description:"Авторизация в системе"
@@ -28,7 +28,6 @@ export class AuthController {
     return await this.authService.login(res, dto);
   }
 
-  
   @ApiOperation({
     summary:"Обновление токена",
     description:"Получение обновленного токена после авторизации"
