@@ -61,6 +61,7 @@ export class UserController {
     description: "Удаление пользователя (доступно для администраторов)"
   })
   @Authorization()
+  
   @Roles("Admin")
   @Delete(":id")
   async deleteUser(@Param("id") id: string, @Req() req: Request) {
